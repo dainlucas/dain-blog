@@ -1,0 +1,9 @@
+{{- $ctx := .context -}}
+<div class="dain-footer-inner">
+  <p>© {{ now.Year }} Lucas Ruan.</p>
+  <nav aria-label="{{ if eq $ctx.Site.Language.Lang "pt-br" }}Links do rodapé{{ else }}Footer links{{ end }}">
+    <a href="https://github.com/dainlucas">GitHub</a>
+    {{- with ($ctx.Site.GetPage "/posts").OutputFormats.Get "RSS" }}<a href="{{ .RelPermalink }}">RSS</a>{{ end }}
+  </nav>
+</div>
+

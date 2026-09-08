@@ -1,0 +1,25 @@
+{{ define "main" }}
+  {{- $isPT := eq .Site.Language.Lang "pt-br" -}}
+  <main id="content" class="dain-page dain-inner-page">
+    <header class="dain-page-header">
+      <p class="dain-kicker">{{ if $isPT }}COISAS QUE ESTOU CONSTRUINDO{{ else }}THINGS I AM BUILDING{{ end }}</p>
+      <h1>{{ .Title }}</h1>
+      <div class="dain-lead">{{ .Content }}</div>
+    </header>
+    <div class="dain-project-grid">
+      {{- range .Pages.ByWeight }}
+        <article class="dain-project-card">
+          <span>{{ .Params.status }}</span>
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p>{{ .Description }}</p>
+          <div class="dain-tags">
+            {{- range .GetTerms "tags" }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end -}}
+          </div>
+        </article>
+      {{- else }}
+        <p>{{ if $isPT }}Os projetos vão aparecer aqui quando estiverem prontos para serem compartilhados.{{ else }}Projects will appear here when they are ready to share.{{ end }}</p>
+      {{- end }}
+    </div>
+  </main>
+{{ end }}
+

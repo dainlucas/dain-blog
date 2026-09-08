@@ -1,0 +1,189 @@
+baseURL: "https://dainlucas.github.io/dain-blog/"
+title: "Dain Blog"
+timeZone: "America/Sao_Paulo"
+defaultContentLanguage: "pt-br"
+defaultContentLanguageInSubdir: false
+enableRobotsTXT: true
+enableGitInfo: true
+capitalizeListTitles: false
+summaryLength: 32
+
+permalinks:
+  posts: "/posts/:year/:slug/"
+
+taxonomies:
+  category: categories
+  tag: tags
+
+outputs:
+  home: [html, rss]
+  section: [html, rss]
+  taxonomy: [html, rss]
+  term: [html, rss]
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.146.0"
+  imports:
+    - path: "github.com/imfing/hextra"
+
+caches:
+  images:
+    dir: ":cacheDir/images"
+
+frontmatter:
+  lastmod: [":git", "lastmod", ":fileModTime", "date"]
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: false
+  highlight:
+    noClasses: false
+    guessSyntax: true
+    tabWidth: 2
+
+languages:
+  pt-br:
+    locale: "pt-BR"
+    label: "Português"
+    weight: 1
+    title: "Dain Blog"
+    params:
+      description: "Anotações sobre mim e meus aprendizados em computação."
+    menus:
+      main:
+        - name: "Início"
+          pageRef: "/"
+          weight: 1
+        - name: "Posts"
+          pageRef: "/posts"
+          weight: 2
+        - name: "Projetos"
+          pageRef: "/projects"
+          weight: 3
+        - name: "Sobre"
+          pageRef: "/about"
+          weight: 4
+        - name: "Buscar"
+          weight: 5
+          params:
+            type: search
+        - name: "Idioma"
+          weight: 6
+          params:
+            type: language-switch
+            label: false
+        - name: "Tema"
+          weight: 7
+          params:
+            type: theme-toggle
+            label: false
+        - name: "GitHub"
+          url: "https://github.com/dainlucas"
+          weight: 8
+          params:
+            icon: github
+        - name: "RSS"
+          url: "/posts/index.xml"
+          weight: 9
+          params:
+            icon: rss
+  en:
+    locale: "en-US"
+    label: "English"
+    weight: 2
+    title: "Dain Blog"
+    params:
+      description: "Notes about me and what I learn in computer science."
+    menus:
+      main:
+        - name: "Home"
+          pageRef: "/"
+          weight: 1
+        - name: "Posts"
+          pageRef: "/posts"
+          weight: 2
+        - name: "Projects"
+          pageRef: "/projects"
+          weight: 3
+        - name: "About"
+          pageRef: "/about"
+          weight: 4
+        - name: "Search"
+          weight: 5
+          params:
+            type: search
+        - name: "Language"
+          weight: 6
+          params:
+            type: language-switch
+            label: false
+        - name: "Theme"
+          weight: 7
+          params:
+            type: theme-toggle
+            label: false
+        - name: "GitHub"
+          url: "https://github.com/dainlucas"
+          weight: 8
+          params:
+            icon: github
+        - name: "RSS"
+          url: "/en/posts/index.xml"
+          weight: 9
+          params:
+            icon: rss
+
+params:
+  description: "Anotações sobre mim e meus aprendizados em computação."
+  images:
+    - "images/social-card.webp"
+  externalLinkDecoration: true
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    width: wide
+    logo:
+      path: "images/logo.png"
+      dark: "images/logo.png"
+      width: 30
+      height: 30
+  theme:
+    default: system
+    displayToggle: true
+  footer:
+    enable: true
+    displayCopyright: false
+    displayPoweredBy: false
+    width: wide
+  search:
+    enable: true
+    type: flexsearch
+    flexsearch:
+      index: content
+      tokenize: forward
+  blog:
+    list:
+      displayTags: true
+      sortBy: date
+      sortOrder: desc
+      pagerSize: 10
+    article:
+      displayPagination: true
+  archives:
+    section: posts
+    dateFormat: "02 Jan"
+  toc:
+    displayTags: true
+  highlight:
+    copy:
+      enable: true
+      display: hover
+  comments:
+    enable: false
+  page:
+    width: normal
+    contextMenu:
+      enable: false

@@ -1,0 +1,24 @@
+{
+  "name": "Dain Blog",
+  "short_name": "Dain",
+  "description": "Anotações sobre mim e meus aprendizados em computação.",
+  "start_url": "/dain-blog/",
+  "scope": "/dain-blog/",
+  "display": "standalone",
+  "background_color": "#f7f5ef",
+  "theme_color": "#245b41",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

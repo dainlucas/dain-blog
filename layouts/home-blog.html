@@ -1,0 +1,72 @@
+{{ define "main" }}
+  {{- $isPT := eq .Site.Language.Lang "pt-br" -}}
+  {{- $posts := where .Site.RegularPages "Section" "posts" -}}
+  {{- $projects := where (where .Site.RegularPages "Section" "projects") "Params.featured" true -}}
+  <main id="content" class="dain-page">
+    <section class="dain-hero" aria-labelledby="dain-title">
+      <div>
+        <p class="dain-kicker">{{ if $isPT }}CIÊNCIA DA COMPUTAÇÃO · SISTEMAS · C{{ else }}COMPUTER SCIENCE · SYSTEMS · C{{ end }}</p>
+        <h1 id="dain-title">Dain Blog</h1>
+        <div class="dain-lead">{{ .Content }}</div>
+        <div class="dain-actions">
+          <a class="dain-button dain-button-primary" href="{{ "posts/" | relLangURL }}">{{ if $isPT }}Ler os posts{{ else }}Read the posts{{ end }}</a>
+          <a class="dain-button" href="{{ "about/" | relLangURL }}">{{ if $isPT }}Sobre mim{{ else }}About me{{ end }}</a>
+        </div>
+      </div>
+      <img class="dain-avatar" src="{{ "images/avatar.webp" | relURL }}" width="640" height="640" alt="{{ if $isPT }}Ilustração de um estudante de computação trabalhando{{ else }}Illustration of a computer science student at work{{ end }}">
+    </section>
+
+    <section class="dain-section" aria-labelledby="recent-posts">
+      <div class="dain-section-heading">
+        <div>
+          <p class="dain-kicker">{{ if $isPT }}CADERNO ABERTO{{ else }}OPEN NOTEBOOK{{ end }}</p>
+          <h2 id="recent-posts">{{ if $isPT }}Últimos posts{{ else }}Latest posts{{ end }}</h2>
+        </div>
+        <a href="{{ "archive/" | relLangURL }}">{{ if $isPT }}Ver arquivo{{ else }}View archive{{ end }} →</a>
+      </div>
+      <div class="dain-post-list">
+        {{- range first 5 ($posts.ByDate.Reverse) }}
+          <article class="dain-post-row">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "utils/format-date" .Date }}</time>
+            <div>
+              <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+              <p>{{ .Description | default .Summary | plainify }}</p>
+              {{ with .GetTerms "tags" }}
+                <div class="dain-tags">
+                  {{- range first 4 . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end -}}
+                </div>
+              {{ end }}
+            </div>
+          </article>
+        {{- else }}
+          <p>{{ if $isPT }}O primeiro texto está a caminho.{{ else }}The first post is on its way.{{ end }}</p>
+        {{- end }}
+      </div>
+    </section>
+
+    <section class="dain-section" aria-labelledby="featured-projects">
+      <div class="dain-section-heading">
+        <div>
+          <p class="dain-kicker">{{ if $isPT }}EM CONSTRUÇÃO{{ else }}WORK IN PROGRESS{{ end }}</p>
+          <h2 id="featured-projects">{{ if $isPT }}Projetos em destaque{{ else }}Featured projects{{ end }}</h2>
+        </div>
+        <a href="{{ "projects/" | relLangURL }}">{{ if $isPT }}Todos os projetos{{ else }}All projects{{ end }} →</a>
+      </div>
+      <div class="dain-project-grid">
+        {{- range $projects.ByWeight }}
+          <article class="dain-project-card">
+            <span>{{ .Params.status }}</span>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p>{{ .Description }}</p>
+            <div class="dain-tags">
+              {{- range first 4 (.GetTerms "tags") }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end -}}
+            </div>
+          </article>
+        {{- else }}
+          <p>{{ if $isPT }}Nenhum projeto destacado por enquanto.{{ else }}No featured projects yet.{{ end }}</p>
+        {{- end }}
+      </div>
+    </section>
+  </main>
+{{ end }}
+

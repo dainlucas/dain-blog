@@ -16,7 +16,7 @@ categories: []
 <!--more-->
 
 ## O "Grande" projeto
-Desde Maio venho trabalhando num projeto pessoal de coleta notícias e envio de notificações delas para os alunos. Em longos 5 meses eu desenvolvi essa aplicação:
+Desde Maio venho trabalhando num projeto pessoal de coleta notícias do site da faculdade e envio de notificações delas para os alunos. Em longos 5 meses eu desenvolvi essa aplicação:
 
 No 1 mês: A ideia era o robozinho varrer todo o site e me falar quais novas páginas surgiram, e diante delas eu conseguir acompanhar lançamento de editais e notícias. Isso no primeiro mês se provou perigoso, pois o site possuía diversas páginas fantasmas que faziam o bot realizar MUITAS requisições no servidor em um curto espaço de tempo. 
 
@@ -31,7 +31,7 @@ No 5 mês era o deploy, consegui 1 ano grátis de uma VM da Azure e poderia deix
 <!--more-->
 
 ## 5 Meses em 1 dia
-Na semana de eventos da faculdade, tive uma palestra com um rapaz de 26 anos chamado X havia feito uma dinâmica sobre a ideação de um novo produto, dentre diversas coisas ele nos mostrou na prática como moldar a ideia de uma pessoa "acelerada" de modo a torná-la real e eficiente. Depois de ver essa palestra eu fiquei maravilhado com o novo conhecimento que tinha acabado de adquirir. Logo fui atrás de onde aplicar.
+Na semana de eventos da faculdade, tive uma palestra com um rapaz de 26 anos chamado Gabriel Fontes havia feito uma dinâmica sobre a ideação de um novo produto, dentre diversas coisas ele nos mostrou na prática como moldar a ideia de uma pessoa "acelerada" de modo a torná-la real e eficiente. Depois de ver essa palestra eu fiquei maravilhado com o novo conhecimento que tinha acabado de adquirir. Logo fui atrás de onde aplicar.
 
 Caiu como uma luva o projeto dos editais, já estava há longos meses em desenvolvimento e ainda teríamos um custo altíssimo, foi daí que resolvi aplicar os conhecimentos aprendidos, durante pausas entre palestras refleti em como tornar minha aplicação grátis e eficiente mantendo a funcionalidade principal. 
 

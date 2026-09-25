@@ -36,3 +36,7 @@ Na semana de eventos da faculdade, assisti a uma palestra com um rapaz de 26 ano
 O projeto dos editais caiu como uma luva: já estava há longos meses em desenvolvimento e ainda teríamos um custo altíssimo. Foi daí que resolvi aplicar os conhecimentos aprendidos. Durante as pausas entre palestras, refleti sobre como tornar minha aplicação grátis e eficiente, mantendo a funcionalidade principal.
 
 Depois de muitos pensamentos e pesquisas, consegui traçar um plano e, no mesmo dia, coloquei em ação. Resumo: consegui planejar, desenvolver e colocar para funcionar em apenas 1 dia a funcionalidade principal do meu projeto de 5 meses.
+
+## Método
+
+...

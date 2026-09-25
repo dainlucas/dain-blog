@@ -14,5 +14,4 @@ tags:
 A laboratory for studying data structures, bit manipulation, instruction decoding, and memory safety without hiding the details.
 
 - [Code and backlog on GitHub](https://github.com/dainlucas/rv-tracelab)
-- [Read the first post about the project]({{% relref "/posts/rv-tracelab" %}})
 

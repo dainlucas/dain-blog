@@ -14,5 +14,4 @@ tags:
 Um laboratório para estudar estruturas de dados, manipulação de bits, decodificação de instruções e segurança de memória sem esconder os detalhes.
 
 - [Código e backlog no GitHub](https://github.com/dainlucas/rv-tracelab)
-- [Leia o primeiro post sobre o projeto]({{% relref "/posts/rv-tracelab" %}})
 
